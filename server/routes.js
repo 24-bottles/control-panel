@@ -10,6 +10,11 @@ const express = require('express'),
 module.exports.init = function(app) {
 
   app.use('/public', express.static(process.env.BASE_PATH + '/public'));
+  // Source
+  if (process.env.NODE_ENV === 'development') {
+    app.use('/client', express.static(process.env.BASE_PATH + '/client'));
+  }
+
   app.use(serverResponse);
   app.use('/api/', bodyParser.json());
   /* @ToDo: [1] La pagina de 404 no esta andando */

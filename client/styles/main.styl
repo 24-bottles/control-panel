@@ -1,3 +1,22 @@
-@import "variables"
-@import "general"
-@import "landing"
+// out: $1.css, sourcemap: true, compress: false
+
+@import "framework.variables";
+@import "framework.base";
+@import "framework.grid";
+@import 'partial.menu'
+@import 'partial.footer'
+@import 'partial.landing'
+
+main
+  background-color: lightgray!important
+  display flex
+  article
+    background-color: lightseagreen!important
+    flex-grow 1
+    section
+      background-color: lightgreen!important
+      flex-grow 1
+      flex-shrink 1
+    aside
+      background-color: lightblue!important
+      min-width 300px
