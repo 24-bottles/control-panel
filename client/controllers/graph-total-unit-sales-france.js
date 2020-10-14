@@ -1,4 +1,4 @@
-Highcharts.chart('container-total-unit-sales-france', {
+Highcharts.chart('container-unit-sales-france', {
   chart: {
     type: 'line'
   },

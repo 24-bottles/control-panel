@@ -30,6 +30,8 @@ module.exports.init = function(app) {
   /* @ToDo: Hacer test de que tienen que existir estos comentarios para que puda funcionar el CLI */
 	app.get('/api/example/getter', exampleController.getter);
 	app.post('/api/example/setter', exampleController.setter);
+
+  // Sales
 	//- @CLI-app-getter-setter
 
 };
