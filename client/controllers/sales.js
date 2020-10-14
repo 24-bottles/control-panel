@@ -2,13 +2,14 @@
 angular.module('App').controller('salesController', [
 '$scope',
 'Sales',
-function($scope, Sales) {
-
-  $scope.sales = {};
+'HIGHCHARTS',
+function($scope, Sales, HIGHCHARTS) {
 
   Sales.getter().then(function(result){
-    $scope.sales.italy = result.data;
-    console.log($scope.sales.italy);
+    let options = HIGHCHARTS.baseOptions;
+    options.xAxis.categories = result.data.categories;
+    options.series = result.data.series;
+    Highcharts.chart('container-unit-sales-italy', options);
   });
 
 }]);
