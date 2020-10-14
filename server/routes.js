@@ -3,6 +3,7 @@ const express = require('express'),
       bodyParser = require('body-parser'),
 			landingController = require(process.env.SERVER_PATH + '/controllers/landing.server.controller'),
 			exampleController = require(process.env.SERVER_PATH + '/controllers/example.server.controller'),
+			salesController = require(process.env.SERVER_PATH + '/controllers/sales.server.controller'),
 			//- @CLI-routes-ctrlImport
       serverResponse = require(process.env.SERVER_PATH + '/middlewares/server-response');
 
@@ -32,6 +33,7 @@ module.exports.init = function(app) {
 	app.post('/api/example/setter', exampleController.setter);
 
   // Sales
+	app.get('/api/sales/units-sales-italy', salesController.getter);
 	//- @CLI-app-getter-setter
 
 };
